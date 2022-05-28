@@ -15,9 +15,6 @@ function SignUp() {
         <input type = "password" name = "" placeholder = "Enter Password Here">
         </input>
         <h1></h1>
-        <input type = "Confirm Password" name = "" placeholder = "Confirm Your Password">
-  
-        </input>
         <h1>
         </h1>
         <button class = "butts"> <a href = "#"> Sign Up </a></button>
