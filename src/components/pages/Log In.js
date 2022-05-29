@@ -6,7 +6,7 @@ import './Log In.css';
 function LogIn() {
   return (
     <div class = "okay">
-      <img src='https://images.hdqwalls.com/download/tesla-roadster-4k-pd-1366x768.jpg' autoPlay loop muted />
+      <img src='https://www.tesla.com/sites/default/files/images/model-x-five-star-rating-hero.jpg' autoPlay loop muted />
       <div class = "loginbox">
         <h2> Log In</h2>
         <input type = "email" name = "email" placeholder = "Enter Email Here">
