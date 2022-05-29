@@ -35,7 +35,7 @@
 }
 
 .sign-up {
-  background-image: url('/Users/zhantingtoh/TeslaRentals/teslaRentals/public/images/img-10.jpg');
+  background-image: url('../public/images/img-10.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

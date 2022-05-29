@@ -2,31 +2,53 @@ import React from 'react';
 import '../../App.css';
 import { Button } from './../Button';
 import './Log In.css';
+import { useRef } from 'react';
+import { supabase } from '../../supabase';
+import { useNavigate } from "react-router-dom";
 
-function LogIn() {
+export default function LogIn() {
+
+  const emailRef = useRef()
+  const passwordRef = useRef()
+  const navigate = useNavigate();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    const { error } = await supabase.auth.signIn({ email, password });
+    if (error) {
+      alert("error signing in");
+    } else {
+      // Redirect user to Dashboard
+      navigate("/dashboard");
+    }
+  }
   return (
-    <div class = "okay">
-      <img src='https://www.tesla.com/sites/default/files/images/model-x-five-star-rating-hero.jpg' autoPlay loop muted />
-      <div class = "loginbox">
-        <h2> Log In</h2>
-        <input type = "email" name = "email" placeholder = "Enter Email Here">
-        </input>
-        <h1></h1>
-        <input type = "password" name = "" placeholder = "Enter Password Here">
-        </input>
-        <h1></h1>
-        <h1>
-        </h1>
-        <button class = "butts"> <a href = "#"> Log In </a></button>
-        <div class = "icon">
-          <a href = "#"><icon-icon name = "logo-facebook"></icon-icon></a>
-          <a href = "#"><icon-icon name = "logo-instagram"></icon-icon></a>
-          <a href = "#"><icon-icon name = "logo-twitter"></icon-icon></a>
-          <a href = "#"><icon-icon name = "logo-google"></icon-icon></a>
+    <form onSubmit={handleSubmit}>
+      <div class = "okay">
+        <img src='https://www.tesla.com/sites/default/files/images/model-x-five-star-rating-hero.jpg' autoPlay loop muted />
+        <div class = "loginbox">
+          <h2> Log In</h2>
+          <input type = "email" ref={emailRef} name = "email" placeholder = "Enter Email Here">
+          </input>
+          <h1></h1>
+          <input type = "password" ref={passwordRef} name = "" placeholder = "Enter Password Here">
+          </input>
+          <h1></h1>
+          <h1>
+          </h1>
+          <button type={"submit"} class = "butts"> <a href = "#"> Log In </a></button>
+          <div class = "icon">
+            <a href = "#"><icon-icon name = "logo-facebook"></icon-icon></a>
+            <a href = "#"><icon-icon name = "logo-instagram"></icon-icon></a>
+            <a href = "#"><icon-icon name = "logo-twitter"></icon-icon></a>
+            <a href = "#"><icon-icon name = "logo-google"></icon-icon></a>
+          </div>
         </div>
       </div>
-    </div>
+    </form>
+
   )
 }
 
-export default LogIn;
