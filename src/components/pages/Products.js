@@ -1,12 +1,12 @@
 import React from 'react';
 import '../../App.css';
+import Roadster from '../Roadster';
 import ModelS from '../ModelS';
-import teslaRoadster from '../teslaRoadster';
 
 function Products() {
   return (
     <>
-      <teslaRoadster />
+      <Roadster />
       <ModelS />
     </>
   );
