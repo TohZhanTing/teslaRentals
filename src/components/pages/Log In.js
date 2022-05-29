@@ -1,14 +1,14 @@
 import React from 'react';
 import '../../App.css';
 import { Button } from './../Button';
-import './SignUp.css';
+import './Log In.css';
 
-function SignUp() {
+function LogIn() {
   return (
     <div class = "okay">
       <img src='https://images.hdqwalls.com/download/tesla-roadster-4k-pd-1366x768.jpg' autoPlay loop muted />
       <div class = "loginbox">
-        <h2> Sign Up Here</h2>
+        <h2> Log In</h2>
         <input type = "email" name = "email" placeholder = "Enter Email Here">
         </input>
         <h1></h1>
@@ -17,7 +17,7 @@ function SignUp() {
         <h1></h1>
         <h1>
         </h1>
-        <button class = "butts"> <a href = "#"> Sign Up </a></button>
+        <button class = "butts"> <a href = "#"> Log In </a></button>
         <div class = "icon">
           <a href = "#"><icon-icon name = "logo-facebook"></icon-icon></a>
           <a href = "#"><icon-icon name = "logo-instagram"></icon-icon></a>
@@ -29,4 +29,4 @@ function SignUp() {
   )
 }
 
-export default SignUp;
+export default LogIn;

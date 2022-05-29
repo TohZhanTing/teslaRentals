@@ -1,22 +1,12 @@
 import React from 'react';
 import '../App.css';
-import { ButtonS } from './ButtonS';
 import './ModelS.css';
 
 function ModelS() {
   return (
     <div className='model-s'>
-      <img src='/images/tesla-model-s.jpg'/>
-      <h1>Model S</h1>
-      <div className='teslaS-btns'>
-        <ButtonS
-          className='btns'
-          buttonStyle='tesla--outline'
-          buttonSize='tesla--large'
-        >
-          CUSTOM ORDER
-        </ButtonS>
-    </div>
+      <video src='/videos/teslaS.mp4' autoPlay loop muted className = "albert" />
+      <h1>Roadster</h1>
 
 
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { Button } from './Button';
+import { LogInButton } from './LogInButton';
 import './HeroSection.css';
 
 function HeroSection() {
@@ -10,21 +10,21 @@ function HeroSection() {
       <h1>ADVENTURE AWAITS</h1>
       <p>What are you waiting for?</p>
       <div className='hero-btns'>
-        <Button
+        <LogInButton
           className='btns'
           buttonStyle='btn--outline'
           buttonSize='btn--large'
         >
           GET STARTED
-        </Button>
-        <Button
+        </LogInButton>
+        <LogInButton
           className='btns'
           buttonStyle='btn--primary'
           buttonSize='btn--large'
           onClick={console.log('hey')}
         >
           Log In <i className='far fa-play-circle' />
-        </Button>
+        </LogInButton>
       </div>
     </div>
   );
