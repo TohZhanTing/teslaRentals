@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
+
+
 :root{
     --yellow:#f9d806;
     --light-yellow:#ffee80;
@@ -91,12 +93,25 @@ html{
     display:none;
 }
 
+.header.active{
+    box-shadow:var(--box-shadow);
+    padding:2rem 9%;
+}
+
 @media(max-width:991px){
     html{
         font-size:55%;
     }
 
     .header{
+        padding:2rem;
+    }
+
+    .header.active{
+        padding:2rem;
+    }
+
+    .section{
         padding:2rem;
     }
 }
@@ -128,7 +143,7 @@ html{
     }
 
     .header .navibar.active{
-        clip-path:polygon(0 0,100% 0,100% 0,0 0);
+        clip-path:polygon(0 0,100% 0,100% 100%,0 100%);
     }
 
     .header .navibar a{

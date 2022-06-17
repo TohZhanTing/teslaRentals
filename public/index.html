@@ -21,6 +21,12 @@
       rel="stylesheet"
     />
 
+    <link rel="stylee" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.14/css/all.min.css">
+    <link rel ="stylee" href="css/Dashboard.css">
+    <link rel = "stylee" href = "src/components/pages/Products.css">
+    
+    
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -39,6 +45,7 @@
     <title>React App</title>
   </head>
   <body>
+    
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -51,5 +58,73 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+  
   </body>
+  <script src = 'https://unpkg.com/@supabase/supabase-js'></script>
+  <script>
+    const { createClient } = supabase
+    const supabaseUrl = "https://myiikjtkbyxpvjescdwv.supabase.co"
+    const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im15aWlranRrYnl4cHZqZXNjZHd2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTMyODgyMTIsImV4cCI6MTk2ODg2NDIxMn0.tJvFmo9engd9PDq9h7d_4pAW7HA4jkTQqe5w3Ez5VP8"
+    supabase = createClient(supabaseUrl, supabaseAnonKey)
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const navigate = useNavigate();
+    const form = document.querySelector('#login-form')
+    form.addEventListener('submit',async(event)=>{
+      event.preventDefault()
+    })
+
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const email = emailRef.current.value;
+      const password = passwordRef.current.value;
+      const { error } = await supabase.auth.signIn({ email, password });
+      if (error) {
+        alert("error signing in");
+      } else {
+        // Redirect user to Dashboard
+        navigate("/dashboard");
+      }
+    }
+  </script>
+  <dashboardbody>
+    <header class = "header">
+      
+      <div id='menu-btn' class='fas fa-bars'></div>
+      <a href="#" class="logo"> <span>Tesla</span>Rentals</a>
+      <nav class="navibar">
+          <a href="/">Home</a>
+          <a href="/products">Vehicles</a>
+          <a href="/services">Services</a>
+          <a href="#featured">Featured</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+      </nav>
+      <div id ="login-btn">
+          <button class = "btnn">login</button>
+          <i class = 'far fa-user'></i>
+      </div>
+  </header>
+
+  <div class="login-form-container">
+    <span class = 'fas fa-times' id ='close-login-form'></span>
+    <form onSubmit={handleSubmit} action="" id="login-form">
+      <h10>user login</h10>
+      <input type ="email" name = "email" ref={emailRef} placeholder="email" class="box1"></input>
+      <input type = "password" name="password" ref={passwordRef} placeholder ="password" class="box1"></input>
+      <p>forget your password <a href ="#">click here</a></p>
+      <button type="submit" class = "btnn"> <a href = "/dashboard"> Log In </a></button>
+      <p>or login with</p>
+      <div class ="buttons">
+        <a href="#" class="btnn">google</a>
+        <a href ="#" class = "btnn">facebook</a>
+      </div>
+      <p>don't have an account <a href='#'>create one</a></p>
+    </form>
+  </div>
+  <script src ='/Users/zhantingtoh/TeslaRentals/teslaRentals/src/components/pages/Log In.js'></script>
+  <script src ='./tempp.js'></script>
+
+  </dashboardbody>
 </html>

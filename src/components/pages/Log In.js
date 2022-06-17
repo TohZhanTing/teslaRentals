@@ -26,7 +26,7 @@ export default function LogIn() {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <div class = "okay">
+      <div class="login-form-container">
         <img src='https://www.tesla.com/sites/default/files/images/model-x-five-star-rating-hero.jpg' autoPlay loop muted />
         <div class = "loginbox">
           <h2> Log In</h2>

@@ -24,7 +24,7 @@ function HeroSection() {
           buttonSize='btn--large'
           onClick={console.log('hey')}
         >
-          Log In <i className='far fa-play-circle' />
+           Sign Up <i className='far fa-play-circle' />
         </LogInButton>
       </div>
     </div>

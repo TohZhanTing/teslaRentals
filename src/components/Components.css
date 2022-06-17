@@ -1,0 +1,60 @@
+.icons-container{
+    padding-top:8rem;
+    padding-bottom: 8rem;
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+    gap:1.5rem;
+    background:#eee;
+}
+
+.icons-container .icons{
+    display:flex;
+    align-items:center;
+    gap:1.5rem;
+    padding:2rem;
+    background:#fff;
+    box-shadow: var(--box-shadow);
+    border-radius:1.5rem;
+    font-size: medium;
+}
+
+.icons-container .icons i{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    background: #eee;
+    color: var(--black);
+    text-align: center;
+}
+
+.icons-container .icons .content h6{
+    color: var(--yellow);
+    font-size: 2.5rem;
+}
+
+.icons-container .icons .content p{
+    color:var(--light-color);
+    font-size:1.5rem;
+}
+
+.icons-container .icons:hover{
+    background: var(--black);
+}
+
+.icons-container .icons:hover i{
+    background: var(--yellow);
+}
+
+.icons-container .icons:hover .content h6{
+    color:#fff;
+}
+
+.icons-container .icons:hover .content p{
+    color:#eee;
+}
+
+.section{
+    padding:2rem 9%;
+}

@@ -1,9 +1,8 @@
 import React from 'react';
-import '../../App.css';
-import { Button } from './../Button';
+import '../App.css';
+import './Components.css';
 
-
-function Services() {
+function Components() {
   return (
     <section class = 'icons-container'>
       <div class ='icons'>
@@ -42,4 +41,4 @@ function Services() {
   );
 }
 
-export default Services;
+export default Components;
