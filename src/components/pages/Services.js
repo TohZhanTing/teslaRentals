@@ -34,7 +34,7 @@ function Services() {
         <i class = 'fas fa-car'></i>
         <div class ='content'>
           <h6>850+</h6>
-          <p>new Tesla</p>
+          <p>New Tesla</p>
         </div>
       </div>
 
