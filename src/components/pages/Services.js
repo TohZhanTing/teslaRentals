@@ -1,45 +1,56 @@
-import React from 'react';
-import '../../App.css';
-import { Button } from './../Button';
+import {
+  Button,
+  Flex,
+  Grid,
+  Heading,
+  HStack,
+  TabIndicator,
+} from "@chakra-ui/react";
+import ProductSimple from "../../components/DisplayCard";
 
+import { supabase } from "../../supabase";
+import { useState, useEffect } from "react";
+import { Link, Link as ReactRouterLink } from "react-router-dom";
 
-function Services() {
+export default function Services() {
+
+  const [loading, setLoading] = useState(true);
+  const [results, setResults] = useState([]);
+ 
+  async function getResult() {
+    
+    const { data, error, status } = await supabase
+      .from("rentals")
+      .select(`model, price`)
+      
+
+    const newData = Array.from(data);
+    setResults(newData);
+  }
+
+  useEffect(() => {
+    getResult();
+  }, []);
+
   return (
-    <section class = 'icons-container'>
-      <div class ='icons'>
-        <i class = 'fas fa-home'></i>
-        <div class ='content'>
-          <h6>50+</h6>
-          <p>branches</p>
-        </div>
-      </div>
-
-      <div class = 'icons'>
-        <i class='fas fa-car'></i>
-        <div class = 'content'>
-          <h6>2300+</h6>
-          <p>Tesla sold</p>
-        </div>
-      </div>
-
-      <div class = 'icons'>
-        <i class = 'fas fa-users'></i>
-        <div class ='content'>
-          <h6>1000+</h6>
-          <p>happy cilents</p>
-        </div>
-      </div>
-
-      <div class = 'icons'>
-        <i class = 'fas fa-car'></i>
-        <div class ='content'>
-          <h6>850+</h6>
-          <p>New Tesla</p>
-        </div>
-      </div>
-
-    </section>
+    <div>
+      
+      <Grid templateColumns="repeat(4, 1fr)" spacing={20} px={20}>
+        {results.map((result) => (
+          <ProductSimple name={result.model} price={result.price} />
+        ))}
+        <Button
+          bg={"blue.400"}
+          rounded={"full"}
+          color={"white"}
+          _hover={{ bg: "blue.500" }}
+          as={Link}
+          to="/dashboard"
+        >
+          Update Invoice
+        </Button>
+      </Grid>
+    </div>
   );
 }
 
-export default Services;
