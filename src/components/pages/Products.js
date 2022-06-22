@@ -6,40 +6,40 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 
 export default function Products() {
   useEffect(() => {
-  var swiper = new Swiper(".vehicles-slider",{
-    modules: [ Navigation, Pagination ],
-    observer: true,
-    observeParents: true,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    slidesPerView:1,
-    spaceBetween:20,
-    freeMode:true,
-    loop:true,
-    grabCursor:true,
-    centeredSlides:true,
-    centerInsufficientSlides:false,
-    preventClicks:false,
-    preventClicksPropagation:false,
-    autoplay:true,
-    pagination:{
-      el: '.swiper-pagination',
-    clickable: true,
-    },
-    
-    breakpoints:{
-      0:{
-        slidesPerView:1,
+    var swiper = new Swiper(".vehicles-slider",{
+      modules: [ Navigation, Pagination ],
+      observer: true,
+      observeParents: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+      slidesPerView:1,
+      spaceBetween:20,
+      freeMode:true,
+      loop:true,
+      grabCursor:true,
+      centeredSlides:true,
+      centerInsufficientSlides:false,
+      preventClicks:false,
+      preventClicksPropagation:false,
+      autoplay:true,
+      pagination:{
+        el: '.swiper-pagination',
+      clickable: true,
       },
-      768:{
-        slidesPerView:2,
+      
+      breakpoints:{
+        0:{
+          slidesPerView:1,
+        },
+        768:{
+          slidesPerView:2,
+        },
+        991: {
+          slidesPerView:3,
+        },
       },
-      991: {
-        slidesPerView:3,
-      },
-    },
-  },[]);
-  });
+    },[]);
+    });
   return (
     <section class = 'vehicles' id = 'vehicles'>
     <h1 class = 'heading'>popular <span>vehicles</span></h1>

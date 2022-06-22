@@ -1,0 +1,48 @@
+.service .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.service .box-container .box{
+    padding:2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border:var(--border);
+    text-align: center;
+}
+
+.service .box-container .box i{
+    height:6rem;
+    width:6rem;
+    line-height: 6rem;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background:var(--yellow);
+    color:var(--black);
+}
+
+.service .box-container .box h3{
+    font-size: 2.2rem;
+    color:var(--black);
+}
+
+.service .box-container .box p{
+    line-height: 1.8;
+    padding:1rem 0;
+    font-size: 1.4rem;
+    color:var(--light-color);
+}
+
+.service .box-container .box:hover{
+    background: var(--black);
+}
+
+.service .box-container .box:hover h3{
+    color:#fff;
+}
+
+.service .box-container .box:hover p{
+    color:#eee;
+}
