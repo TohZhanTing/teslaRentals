@@ -15,12 +15,12 @@ document.querySelector("#close-login-form").onclick =() => {
 }
 
 document.querySelector("#sell-btn").onclick =() => {
-    document.querySelector('.sellnow-form-container').classList.toggle('active');
+    document.querySelector('.seller-form-container').classList.toggle('active');
 
 }
 
 document.querySelector("#close-sellnow-form").onclick =() => {
-    document.querySelector('.sellnow-form-container').classList.remove('active');
+    document.querySelector('.seller-form-container').classList.remove('active');
 
 }
     
