@@ -103,7 +103,7 @@ export default function Sellcars() {
             my={12}
           >
             <Heading lineHeight={1.1} fontSize={{ base: "2xl", sm: "3xl" }}>
-              Insert Invoice
+              Listing Information
             </Heading>
             
             <FormControl id="Name" isRequired>
