@@ -4,6 +4,7 @@ import {
     Grid,
     Heading,
     HStack,
+    propNames,
     TabIndicator,
   } from "@chakra-ui/react";
   import ProductSimple from "../../components/DisplayCard";
@@ -21,7 +22,7 @@ import {
       
       const { data, error, status } = await supabase
         .from("rentals")
-        .select(`name, model, price`)
+        .select(`name, model, price, year, coe, unique`)
         
   
       const newData = Array.from(data);
@@ -37,7 +38,7 @@ import {
         
         <Grid templateColumns="repeat(4, 1fr)" spacing={20} px={20}>
           {results.map((result) => (
-            <ProductSimple name={result.name} price={result.price} model={result.model} />
+            <ProductSimple name={result.name} price={result.price} model={result.model} year={result.year} coe={result.coe} date={result.created} unique={result.unique}/>
           ))}
           
         </Grid>

@@ -27,6 +27,8 @@ export default function Sellcars() {
   const [price, setPrice] = useState();
   const [name, setName] = useState();
   const [model, setModel] = useState();
+  const [year, setYear] = useState();
+  const [coe, setCoe] = useState();
   const toast = useToast();
 
   async function insertInvoice(e) {
@@ -39,7 +41,9 @@ export default function Sellcars() {
         name,
         model,
         price,
-        created_at: new Date(),
+        year,
+        coe,
+        created: new Date(),
       };
 
       let { error } = await supabase.from("rentals").insert(updates, {
@@ -86,6 +90,8 @@ export default function Sellcars() {
 
 
           <form action ="" onSubmit={insertInvoice}>
+
+          
         <Flex
           minH={"100vh"}
           align={"center"}
@@ -116,7 +122,7 @@ export default function Sellcars() {
                 onChange={(e) => setName(e.target.value)}
               />
             </FormControl>
-            <HStack>
+            
               <FormControl id="Model" isRequired>
                 <FormLabel>Model</FormLabel>
                 <Input
@@ -137,7 +143,29 @@ export default function Sellcars() {
                   onChange={(e) => setPrice(e.target.value)}
                 />
               </FormControl>
-            </HStack>
+
+              <FormControl id="year of production" isRequired>
+                <FormLabel>Year of Production</FormLabel>
+                <Input
+                  placeholder="Year of Production"
+                  _placeholder={{ color: "gray.500" }}
+                  type="text"
+                  value={year || ""}
+                  onChange={(e) => setYear(e.target.value)}
+                />
+              </FormControl>
+
+              <FormControl id="COE" isRequired>
+                <FormLabel>COE Expiry Year</FormLabel>
+                <Input
+                  placeholder="Year of Expiry"
+                  _placeholder={{ color: "gray.500" }}
+                  type="text"
+                  value={coe || ""}
+                  onChange={(e) => setCoe(e.target.value)}
+                />
+              </FormControl>
+            
             
             
             <Stack spacing={6} direction={["column", "row"]}>
