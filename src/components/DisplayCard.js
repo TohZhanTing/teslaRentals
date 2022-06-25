@@ -1,81 +1,90 @@
-import {
-    Box,
-    Center,
-    useColorModeValue,
-    Heading,
-    Text,
-    Stack,
-    Image,
-  } from '@chakra-ui/react';
 
   import { Link } from 'react-router-dom';
-
-  
-  const IMAGE =
-    'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80';
+  import {
+    Heading,
+    Avatar,
+    Box,
+    Center,
+    Image,
+    Flex,
+    Text,
+    Stack,
+    Button,
+    useColorModeValue,
+  } from '@chakra-ui/react';
   
   export default function ProductSimple(props) {
     return (
-      <Center py={12}>
+      <Center py={6}>
         <Box
-          role={'group'}
-          p={6}
-          maxW={'330px'}
+          maxW={'270px'}
           w={'full'}
           bg={useColorModeValue('white', 'gray.800')}
           boxShadow={'2xl'}
-          rounded={'lg'}
-          pos={'relative'}
-          zIndex={1}>
-          <Box
-            rounded={'lg'}
-            mt={-12}
-            pos={'relative'}
-            height={'230px'}
-            _after={{
-              transition: 'all .3s ease',
-              content: '""',
-              w: 'full',
-              h: 'full',
-              pos: 'absolute',
-              top: 5,
-              left: 0,
-              backgroundImage: `url(${IMAGE})`,
-              filter: 'blur(15px)',
-              zIndex: -1,
-            }}
-            _groupHover={{
-              _after: {
-                filter: 'blur(20px)',
-              },
-            }}>
-            <Image
-              rounded={'lg'}
-              height={230}
-              width={282}
-              objectFit={'cover'}
-              src={IMAGE}
+          rounded={'md'}
+          overflow={'hidden'}>
+          <Image
+            h={'120px'}
+            w={'full'}
+            
+            objectFit={'cover'}
+          />
+          <Flex justify={'center'} mt={-12}>
+            <Avatar
+              size={'xl'}
+              src={
+                'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ'
+              }
+              alt={'Author'}
+              css={{
+                border: '2px solid white',
+              }}
             />
-          </Box>
-          <Stack pt={10} align={'center'}>
-            <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'} as={Link}
-              to="/dashboard" >
-              Model
-            </Text>
-            <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
+          </Flex>
+  
+          <Box p={6}>
+            <Stack spacing={0} align={'center'} mb={5}>
+              
+              <Text color={'gray.500'}>Seller Name</Text>
+              <Heading fontSize={'2xl'} fontWeight={500} fontFamily={'body'}>
               {props.name}
-            </Heading>
-            <Stack direction={'row'} align={'center'}>
-              <Text fontWeight={800} fontSize={'xl'}>
-                {props.price}
-              </Text>
-              <Text textDecoration={'line-through'} color={'gray.600'}>
-                 
-              </Text>
+              </Heading>
             </Stack>
-          </Stack>
-        </Box>
+  
+            <Stack direction={'row'} justify={'center'} spacing={6}>
+              <Stack spacing={0} align={'center'}>
+                
+                <Text fontSize={'sm'} color={'gray.500'}>
+                  Model
+                </Text>
+                <Text fontWeight={600}> {props.model}</Text>
+              </Stack>
+              <Stack spacing={0} align={'center'}>
+                
+                <Text fontSize={'sm'} color={'gray.500'}>
+                  Price
+                </Text>
+                <Text fontWeight={600}> {props.price} </Text>
+              </Stack>
+            </Stack>
+            <Link to="/dashboard">
+     
+            <Button
 
+              w={'full'}
+              mt={8}
+              bg={useColorModeValue('#151f21', 'gray.900')}
+              color={'white'}
+              rounded={'md'}
+              _hover={{
+                transform: 'translateY(-2px)',
+                boxShadow: 'lg',
+              }}>
+              Buy Now
+            </Button>
+            </Link>
+          </Box>
+        </Box>
       </Center>
     );
   }

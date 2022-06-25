@@ -1,7 +1,66 @@
-import React, { useEffect } from "react";
+
+import React, { useState, useEffect } from "react";
+import { supabase } from "../../supabase";
+
 import '../../App.css';
 import './sellcars.css';
+import {
+  Button,
+  Flex,
+  FormControl,
+  FormLabel,
+  Heading,
+  Input,
+  Stack,
+  useColorModeValue,
+  HStack,
+  Avatar,
+  Select,
+  AvatarBadge,
+  IconButton,
+  Center,
+  useToast,
+} from "@chakra-ui/react";
+
 export default function Sellcars() {
+  const [loading, setLoading] = useState(true);
+  const [price, setPrice] = useState();
+  const [name, setName] = useState();
+  const [model, setModel] = useState();
+  const toast = useToast();
+
+  async function insertInvoice(e) {
+    e.preventDefault();
+    try {
+      setLoading(true);
+      
+      const updates = {
+        
+        name,
+        model,
+        price,
+        created_at: new Date(),
+      };
+
+      let { error } = await supabase.from("rentals").insert(updates, {
+        returning: "minimal", // Don't return the value after inserting
+      });
+
+      if (error) {
+        
+        
+
+        throw error;
+      }
+    } catch (error) {
+      alert(error.message);
+    } finally {
+      setLoading(false);
+      
+      
+    }
+  }
+
   useEffect(() => {
     document.querySelector("#sell-btn").onclick =() => {
       document.querySelector('.seller-form-container').classList.toggle('active');
@@ -24,16 +83,92 @@ export default function Sellcars() {
         </div>
         <div class = "seller-form-container">
         <span class = 'fas fa-times' id ='close-seller-form'></span>
-          <form action ="">
-            <h10>Seller Information</h10>
-            <input type = "Email" placeholder="Email" class = "box1"></input>
-            <input type = "Name" placeholder="Name" class = "box1"></input>
-            <input type = "Contact Number" placeholder="Contact Number" class = "box1"></input>
-            <input type = "Vehicle Model Type" placeholder="Vehicle Model Type" class = "box1"></input>
-            <input type = "Number of years left COE" placeholder="Number of years left COE" class = "box1"></input>
-            <input type = "Price willing to sell" placeholder="Price willing to sell" class = "box1"></input>
-            <input type = "Submit" value = "sell now" class = "btnn"></input>
-          </form>
+
+
+          <form action ="" onSubmit={insertInvoice}>
+        <Flex
+          minH={"100vh"}
+          align={"center"}
+          justify={"center"}
+          bg={useColorModeValue("gray.50", "gray.800")}
+        >
+          <Stack
+            spacing={4}
+            w={"full"}
+            maxW={"md"}
+            bg={useColorModeValue("white", "gray.700")}
+            rounded={"xl"}
+            boxShadow={"lg"}
+            p={6}
+            my={12}
+          >
+            <Heading lineHeight={1.1} fontSize={{ base: "2xl", sm: "3xl" }}>
+              Insert Invoice
+            </Heading>
+            
+            <FormControl id="Name" isRequired>
+              <FormLabel>Name</FormLabel>
+              <Input
+                placeholder="Name"
+                _placeholder={{ color: "gray.500" }}
+                type="text"
+                value={name || ""}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </FormControl>
+            <HStack>
+              <FormControl id="Model" isRequired>
+                <FormLabel>Model</FormLabel>
+                <Input
+                  placeholder="Model"
+                  _placeholder={{ color: "gray.500" }}
+                  type="text"
+                  value={model || ""}
+                  onChange={(e) => setModel(e.target.value)}
+                />
+              </FormControl>
+              <FormControl id="Price" isRequired>
+                <FormLabel>Cost</FormLabel>
+                <Input
+                  placeholder="Price"
+                  _placeholder={{ color: "gray.500" }}
+                  type="text"
+                  value={price || ""}
+                  onChange={(e) => setPrice(e.target.value)}
+                />
+              </FormControl>
+            </HStack>
+            
+            
+            <Stack spacing={6} direction={["column", "row"]}>
+              <Button
+                bg={"red.400"}
+                color={"white"}
+                w="full"
+                _hover={{
+                  bg: "red.500",
+                }}
+              >
+                Cancel
+              </Button>
+              <Button
+                bg={"blue.400"}
+                color={"white"}
+                w="full"
+                _hover={{
+                  bg: "blue.500",
+                }}
+                type="submit"
+                
+              >
+                Submit
+              </Button>
+            </Stack>
+          </Stack>
+        </Flex>
+      </form>
+
+           
         </div>
         </section>
         

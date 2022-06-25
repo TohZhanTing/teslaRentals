@@ -21,7 +21,7 @@ import {
       
       const { data, error, status } = await supabase
         .from("rentals")
-        .select(`model, price`)
+        .select(`name, model, price`)
         
   
       const newData = Array.from(data);
@@ -37,18 +37,9 @@ import {
         
         <Grid templateColumns="repeat(4, 1fr)" spacing={20} px={20}>
           {results.map((result) => (
-            <ProductSimple name={result.model} price={result.price} />
+            <ProductSimple name={result.name} price={result.price} model={result.model} />
           ))}
-          <Button
-            bg={"blue.400"}
-            rounded={"full"}
-            color={"white"}
-            _hover={{ bg: "blue.500" }}
-            as={Link}
-            to="/dashboard"
-          >
-            Update Invoice
-          </Button>
+          
         </Grid>
       </div>
     );
