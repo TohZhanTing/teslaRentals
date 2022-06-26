@@ -148,7 +148,7 @@ export default function Sellcars() {
                 />
               </FormControl>
               <FormControl id="Price" isRequired>
-                <FormLabel>Price</FormLabel>
+                <FormLabel>Cost</FormLabel>
                 <Input
                   placeholder="Price"
                   _placeholder={{ color: "gray.500" }}
@@ -205,6 +205,17 @@ export default function Sellcars() {
                   bg: "blue.500",
                 }}
                 type="submit"
+               onClick={() =>
+                  toast({
+                    title: "Invoice uploaded",
+                    description: "You've uploaded your invoice successfully",
+                    status: "success",
+                    duration: 9000,
+
+                    isClosable: true,
+                  })
+                }
+
                 
               >
                 Submit
