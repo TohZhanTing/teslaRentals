@@ -79,6 +79,11 @@ export default function Sellcars() {
     
     }
 
+    document.querySelector("#cancel").onclick =() => {
+      document.querySelector('.seller-form-container').classList.remove('active');
+    
+    }
+
   },[]);
     return (
         <section class = 'sellcar' id = 'sellcar'>
@@ -181,6 +186,7 @@ export default function Sellcars() {
                 _hover={{
                   bg: "red.500",
                 }}
+                id = 'cancel'
               >
                 Cancel
               </Button>

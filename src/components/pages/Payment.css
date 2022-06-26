@@ -116,6 +116,8 @@
     border-radius: .5rem;
 }
 
+
+
 ::placeholder {
     color: rgb(2, 2, 2);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -131,4 +133,26 @@
 .payment-form-container form p a{
     color: var(--yellow);
     text-decoration: underline;
+}
+
+.success {
+    background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  opacity: 0%;
+}
+
+.success.active{
+    top:0;
+    opacity:1;
 }
