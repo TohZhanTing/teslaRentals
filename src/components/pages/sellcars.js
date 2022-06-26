@@ -73,14 +73,20 @@ export default function Sellcars() {
       document.querySelector('.seller-form-container').classList.remove('active');
     
     }
+
+    document.querySelector("#submit").onclick =() => {
+      document.querySelector('.seller-form-container').classList.remove('active');
+    
+    }
+
   },[]);
     return (
         <section class = 'sellcar' id = 'sellcar'>
             <img class = 'sellpic' src = 'images/sell4.jpg'/>
         <h1 class = 'heading1'>"We'll sell your Tesla in 30 days</h1>
-        <p>at the <span>HIGHEST price</span>,</p>
+        <p>at the <span id = "Highest">HIGHEST price</span>,</p>
         <p>GUARANTEED!</p>
-        <h1 class = "buy">or we <span>BUY IT OVER</span> from you!"</h1>
+        <h1 class = "buy">or we <span id = "Highest">BUY IT OVER</span> from you!"</h1>
         <div id = 'sell-btn'>
           <button class = 'btnnn'>SELL NOW</button>
         </div>
@@ -179,6 +185,7 @@ export default function Sellcars() {
                 Cancel
               </Button>
               <Button
+                id = "submit"
                 bg={"blue.400"}
                 color={"white"}
                 w="full"

@@ -10,19 +10,19 @@
   background-image:  url(https://electrek.co/wp-content/uploads/sites/3/2022/01/Tesla-hero-Model-3-Y-S.jpg?quality=82&strip=all);
   background-size: cover;
   }
-  .paycar #close-payment-form{
+  .payment-form-container #close-payment-form{
     position:absolute;
     top: 1.5rem; right:2.5rem;
     font-size: 5rem;
     color:var(--black);
     cursor:pointer;
 }
-  .payment-form-container span{
+  .payment-form-container #money{
     position: relative;
     z-index:0;
 }
 
-.payment-form-container span::before{
+.payment-form-container #money::before{
     content:'';
     position:absolute;
     top:0;left:0;

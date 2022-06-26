@@ -5,7 +5,7 @@ menuBtn.onclick = () => {
         navibar.classList.toggle('active');
     }
 document.querySelector("#login-btn").onclick =() => {
-    document.querySelector('.login-form-container').classList.toggle('active');
+    window.location.replace("http://localhost:3000/log-in");
 
 }
 
