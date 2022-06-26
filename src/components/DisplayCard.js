@@ -31,7 +31,7 @@
         } else {
           // Redirect user to login 
           
-          navigate("/dashboard");
+          navigate("/payment");
         
       }
     }

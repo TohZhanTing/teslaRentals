@@ -10,6 +10,7 @@ import LogIn from './components/pages/Log In';
 import Dashboard from './components/pages/Dashboard';
 import Services from './components/pages/Services';
 import Sellcars from './components/pages/sellcars';
+import Payment from './components/pages/Payment';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path = '/dashboard' element = {<Dashboard/>}/>
           <Route path = '/services' element = {<Services/>}/>
           <Route path = '/sellcars' element = {<Sellcars/>}/>
+          <Route path = '/payment' element = {<Payment/>}/>
         </Routes>
       </Router>
     </>

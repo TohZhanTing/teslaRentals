@@ -57,7 +57,7 @@ export default function Products() {
               <span class = 'fas fa-circle'></span> electric
               <span class = 'fas fa-circle'></span> 200mph
             </p>
-            <a href = '#' class = 'btnn'>check out</a>
+            <a href = '/payment' class = 'btnn'>check out</a>
             </div>
         </div>
 
@@ -73,7 +73,7 @@ export default function Products() {
               <span class = 'fas fa-circle'></span> electric
               <span class = 'fas fa-circle'></span> 200mph
             </p>
-            <a href = '#' class = 'btnn'>check out</a>
+            <a href = '/payment' class = 'btnn'>check out</a>
             </div>
         </div>
 
@@ -89,7 +89,7 @@ export default function Products() {
               <span class = 'fas fa-circle'></span> electric
               <span class = 'fas fa-circle'></span> 200mph
             </p>
-            <a href = '#' class = 'btnn'>check out</a>
+            <a href = '/payment' class = 'btnn'>check out</a>
             </div>
         </div>
 
@@ -105,7 +105,7 @@ export default function Products() {
               <span class = 'fas fa-circle'></span> electric
               <span class = 'fas fa-circle'></span> 200mph
             </p>
-            <a href = '#' class = 'btnn'>check out</a>
+            <a href = '/payment' class = 'btnn'>check out</a>
             </div>
         </div>
       </div>
