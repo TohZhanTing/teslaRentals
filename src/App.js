@@ -11,6 +11,7 @@ import Dashboard from './components/pages/Dashboard';
 import Services from './components/pages/Services';
 import Sellcars from './components/pages/sellcars';
 import Payment from './components/pages/Payment';
+import Success from './components/pages/Success';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path = '/services' element = {<Services/>}/>
           <Route path = '/sellcars' element = {<Sellcars/>}/>
           <Route path = '/payment' element = {<Payment/>}/>
+          <Route path = '/success' element = {<Success/>}/>
         </Routes>
       </Router>
     </>

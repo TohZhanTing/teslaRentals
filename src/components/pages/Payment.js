@@ -8,9 +8,6 @@ function Payment() {
         document.querySelector("#close-payment-form").onclick =() => {
             window.location.replace("http://localhost:3000/");
         }
-        document.querySelector("#sell-btn").onclick =() => {
-            document.querySelector('.seller-form-container').classList.toggle('active');
-          }
     },[]);
   return (
     <section class = "paycar" id = "paycar">
@@ -25,14 +22,10 @@ function Payment() {
             <input type = "Card Number" placeholder="Card Number" class = "box1"></input>
             <input type = "Card Expiry Date" placeholder="Card Expiry Date MM/YY" class = "box1"></input>
             <input type = "CSV" placeholder="CSV" class = "box1"></input>
-            <div id = 'sell-btn'>
-          <button class = 'btnnn'>Complete Downpayment</button>
+            <div id = 'pay-btn'>
+            <button type="submit" class = "btnn"> <a href = "/success">Complete Downpayment</a></button>
         </div>
           </form>
-        </div>
-        <div class = "success">
-            <h10>Payment Success!</h10>
-            <input type = "Submit" value = 'Back to Home' class = "btnn"></input>
         </div>
 
       
