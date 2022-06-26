@@ -24,6 +24,13 @@ function Services() {
           <a href = '/Rentals' class = 'btnn'> view rentals</a>
         </div>
 
+        <div class = "box">
+          <i class = "fas fa-wallet"></i>
+          <h3>Sell your Tesla at the highest price in Singapore</h3>
+          <p>Get the Best Price for your used Tesla from 500+ dealers in 24 hours</p>
+          <a href = '/sellcars' class = 'btnn'> Sell now</a>
+        </div>
+
       <div class = "box">
           <i class = "fas fa-tools"></i>
           <h3>parts repair</h3>
@@ -47,12 +54,7 @@ function Services() {
           <a href = '#' class = 'btnn'> read more</a>
         </div>
 
-        <div class = "box">
-          <i class = "fas fa-wallet"></i>
-          <h3>Sell your Tesla at the highest price in Singapore</h3>
-          <p>Get the Best Price for your used Tesla from 500+ dealers in 24 hours</p>
-          <a href = '/sellcars' class = 'btnn'> Sell now</a>
-        </div>
+        
 
         <div class = "box">
           <i class = "fas fa-headset"></i>

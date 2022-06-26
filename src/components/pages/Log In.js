@@ -21,7 +21,7 @@ export default function LogIn() {
       alert("error signing in");
     } else {
       // Redirect user to Dashboard
-      navigate("/dashboard");
+      navigate("/products");
     }
   }
   return (

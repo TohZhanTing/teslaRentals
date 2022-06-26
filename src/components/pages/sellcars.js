@@ -76,8 +76,17 @@ export default function Sellcars() {
 
     document.querySelector("#submit").onclick =() => {
       document.querySelector('.seller-form-container').classList.remove('active');
+
+      
     
     }
+    document.querySelector("#cancel").onclick =() => {
+      document.querySelector('.seller-form-container').classList.remove('active');
+
+      
+    
+    }
+
 
   },[]);
     return (
@@ -139,7 +148,7 @@ export default function Sellcars() {
                 />
               </FormControl>
               <FormControl id="Price" isRequired>
-                <FormLabel>Cost</FormLabel>
+                <FormLabel>Price</FormLabel>
                 <Input
                   placeholder="Price"
                   _placeholder={{ color: "gray.500" }}
@@ -175,12 +184,15 @@ export default function Sellcars() {
             
             <Stack spacing={6} direction={["column", "row"]}>
               <Button
+                id = "cancel"
                 bg={"red.400"}
                 color={"white"}
                 w="full"
                 _hover={{
                   bg: "red.500",
                 }}
+
+                
               >
                 Cancel
               </Button>
