@@ -6,7 +6,7 @@ import './Payment.css';
 function Payment() {
     useEffect (() => {
         document.querySelector("#close-payment-form").onclick =() => {
-            window.location.replace("http://localhost:3000/");;
+            window.location.replace("http://localhost:3000/");
             
         }
     },[]);
