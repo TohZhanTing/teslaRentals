@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css';
-import { Button } from './../Button';
-import './Log In.css';
+import { Button } from '../Button';
+import './LogIn.css';
 import { useRef } from 'react';
 import { supabase } from '../../supabase';
 import { useNavigate } from "react-router-dom";
@@ -21,12 +21,12 @@ export default function LogIn() {
       alert("error signing in");
     } else {
       // Redirect user to Dashboard
-      navigate("/products");
+      navigate("/dashboard");
     }
   }
   return (
     <form onSubmit={handleSubmit}>
-      <div class = "okay">
+      <div class="login-form-container">
         <img src='https://www.tesla.com/sites/default/files/images/model-x-five-star-rating-hero.jpg' autoPlay loop muted />
         <div class = "loginbox">
           <h2> Log In</h2>
@@ -51,3 +51,4 @@ export default function LogIn() {
 
   )
 }
+

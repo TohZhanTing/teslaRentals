@@ -76,8 +76,17 @@ export default function Sellcars() {
 
     document.querySelector("#submit").onclick =() => {
       document.querySelector('.seller-form-container').classList.remove('active');
+
+      
     
     }
+    document.querySelector("#cancel").onclick =() => {
+      document.querySelector('.seller-form-container').classList.remove('active');
+
+      
+    
+    }
+
 
     document.querySelector("#cancel").onclick =() => {
       document.querySelector('.seller-form-container').classList.remove('active');
@@ -180,13 +189,15 @@ export default function Sellcars() {
             
             <Stack spacing={6} direction={["column", "row"]}>
               <Button
+                id = "cancel"
                 bg={"red.400"}
                 color={"white"}
                 w="full"
                 _hover={{
                   bg: "red.500",
                 }}
-                id = 'cancel'
+
+                
               >
                 Cancel
               </Button>
@@ -199,6 +210,17 @@ export default function Sellcars() {
                   bg: "blue.500",
                 }}
                 type="submit"
+               onClick={() =>
+                  toast({
+                    title: "Invoice uploaded",
+                    description: "You've uploaded your invoice successfully",
+                    status: "success",
+                    duration: 9000,
+
+                    isClosable: true,
+                  })
+                }
+
                 
               >
                 Submit

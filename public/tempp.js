@@ -5,7 +5,7 @@ menuBtn.onclick = () => {
         navibar.classList.toggle('active');
     }
 document.querySelector("#login-btn").onclick =() => {
-    window.location.replace("http://localhost:3000/log-in");
+    window.location.replace("http://teslarentals.vercel.app/log-in");
 
 }
 

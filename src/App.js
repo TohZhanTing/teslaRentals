@@ -10,7 +10,7 @@ import LogIn from './components/pages/Log In';
 import Dashboard from './components/pages/Dashboard';
 import Services from './components/pages/Services';
 import Sellcars from './components/pages/sellcars';
-import Payment from './components/pages/Payment';
+import Payment from './components/pages/Pay';
 import Success from './components/pages/Success';
 
 function App() {
