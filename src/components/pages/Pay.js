@@ -133,7 +133,7 @@ export default class Payment extends React.Component {
             </div>
             <input type='hidden' name='issuer' value={issuer} />
             <div className='form-actions'>
-              <button class = 'btnn'>Submit</button>
+              <button class = 'btnn'>Pay $15,000/-</button>
             </div>
           </form>
         </div>
