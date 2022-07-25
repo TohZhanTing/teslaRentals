@@ -49,7 +49,7 @@ export default class Payment extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    alert('You have finished payment!')
+    alert('You have finished payment! Further details will be emailed to you soon!')
     window.location.replace("http://teslarentals.vercel.app/")
   }
 
