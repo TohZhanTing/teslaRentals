@@ -62,7 +62,7 @@ export default class Payment extends React.Component {
         <div className='payment-form-container'>
         <span class = 'fas fa-times' id ='close-payment-form'></span>
         <form action = ''>
-          <h10>Enter your payment details</h10>
+          <h10>Complete Downpayment $15,000/-</h10>
           <p>please input your <span id = 'money'>information</span></p>
           <Card
             number={number}
