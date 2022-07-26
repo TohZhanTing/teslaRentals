@@ -46,22 +46,7 @@
           boxShadow={'2xl'}
           rounded={'md'}
           overflow={'hidden'}>
-          <Image
-            h={'120px'}
-            w={'full'}
-            
-            objectFit={'cover'}
-          />
-          <Flex justify={'center'} mt={-12}>
-            <Avatar
-              size={'xl'}
-              
-              alt={'Author'}
-              css={{
-                border: '2px solid white',
-              }}
-            />
-          </Flex>
+          
   
           <Box p={6}>
             <Stack spacing={0} align={'center'} mb={5}>
